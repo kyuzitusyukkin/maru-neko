@@ -675,7 +675,7 @@ class Component extends DCLogic {
     super(props);
     this.au = new NyanAudio(); try { this.mute = window.localStorage.getItem('miniMute') === '1'; } catch (e) { this.mute = false; }
     // 音量（0〜100）。こうかおん 60 でいまの大きさ。前に音を消していた人は 0 から。BGM は入れたら効く（いまは保存だけ）
-    this.vol = { bgm: 50, se: 60 }; try { const v = JSON.parse(window.localStorage.getItem('miniVol') || 'null'); if (v) this.vol = { bgm: +v.bgm, se: +v.se }; else if (this.mute) this.vol.se = 0; } catch (e) {}
+    this.vol = { bgm: 50, se: 20 }; try { const v = JSON.parse(window.localStorage.getItem('miniVol') || 'null'); if (v) this.vol = { bgm: +v.bgm, se: +v.se }; else if (this.mute) this.vol.se = 0; } catch (e) {}
     this.mute = this.vol.se === 0; this.au.muted = this.mute;
     let best = 0; let kari = 1250;
     try { best = Number(window.localStorage.getItem('catDropBest') || 0); const k = JSON.parse(window.localStorage.getItem('kari') || 'null'); if (typeof k === 'number') kari = k; } catch (e) {}
