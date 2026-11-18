@@ -55,7 +55,7 @@ button[style*="border-radius"]:not([style*="transparent"]):not([style*="backgrou
 
 <style>
 html,body{margin:0;height:100%;background:#0b0b26;overflow:hidden;overscroll-behavior:none;touch-action:manipulation}
-#stage{position:fixed;left:50%;top:50%;width:390px;height:752px;overflow:hidden;transform-origin:50% 50%}
+#stage{position:fixed;left:50%;top:50%;width:390px;height:708px;overflow:hidden;transform-origin:50% 50%}
 #dc-root{width:390px;height:844px}
 </style>
 </head>
@@ -907,7 +907,7 @@ class Component extends DCLogic {
     const S = this.state;
     const pos = (e) => { const r = e.currentTarget.getBoundingClientRect(); return (e.clientX - r.left) / r.width * W; };
     return {
-      t, embedded: !!this.props.embedded, standalone: !this.props.embedded, ovBottom: this.props.embedded ? "92px" : "0px", headPad: this.props.embedded ? "80px" : "140px", flyTop: this.props.embedded ? "498px" : "558px", onHome: this.props.onHome, markPick: () => { try { window.sessionStorage.setItem('goPick', '1'); } catch (e) {} },
+      t, embedded: !!this.props.embedded, standalone: !this.props.embedded, ovBottom: this.props.embedded ? "92px" : "0px", headPad: "24px", flyTop: this.props.embedded ? "498px" : "558px", onHome: this.props.onHome, markPick: () => { try { window.sessionStorage.setItem('goPick', '1'); } catch (e) {} },
       kariLabel: S.kari.toLocaleString('ja-JP'), bumpAn: S.bump2 ? 'kari-bump 0.4s ease-out' : 'none', flyOn: !!S.fly,
       ...(() => {
         const plays = getPlays(GID), sub = isSub();
@@ -969,7 +969,7 @@ class Component extends DCLogic {
 <script>
 (function () {
   var st = document.getElementById('stage');
-  function fit() { var w = window.innerWidth, h = window.innerHeight; var k = Math.min(w / 390, h / 752); st.style.transform = 'translate(-50%,-50%) scale(' + k + ')'; }
+  function fit() { var w = window.innerWidth, h = window.innerHeight; var k = Math.min(w / 390, h / 708); st.style.transform = 'translate(-50%,-50%) scale(' + k + ')'; }
   window.addEventListener('resize', fit); fit();
   var n = 0;
   dcMount({ props: function (render) { return { embedded: true, onHome: function () { render(++n); } }; } });
