@@ -591,7 +591,7 @@ const MSE = (ac, dest) => {
   // 猫の声（ソートと同じ）。p＝高さ（大きい猫ほど低い声）
   const voice = (name, delay = 0, p = 1, vol = 1) => {
     const v = VOICES[name]; const t0 = ac.currentTime + 0.02 + delay, end = t0 + v.d;
-    const o2 = ac.createGain(); o2.gain.setValueAtTime(0.0001, t0); o2.gain.exponentialRampToValueAtTime(0.18 * vol, t0 + 0.04); o2.gain.setValueAtTime(0.16 * vol, end - 0.08); o2.gain.exponentialRampToValueAtTime(0.0001, end);
+    const o2 = ac.createGain(); o2.gain.setValueAtTime(0.0001, t0); vol *= 0.4; /* 猫の声だけ小さく（ユーザー「ニャーがうるさい」） */ o2.gain.exponentialRampToValueAtTime(0.18 * vol, t0 + 0.04); o2.gain.setValueAtTime(0.16 * vol, end - 0.08); o2.gain.exponentialRampToValueAtTime(0.0001, end);
     const bp = ac.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.setValueAtTime(1100 * p, t0); bp.frequency.linearRampToValueAtTime(1600 * p, t0 + v.d * 0.4); bp.frequency.linearRampToValueAtTime(900 * p, end); bp.Q.value = 1.6;
     const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3200;
     [1, 2.01].forEach((mul, k) => {
