@@ -311,7 +311,7 @@ const lighten = (hex, k) => { const n = parseInt(hex.slice(1), 16); const f = (c
 const MN = (() => {
   const st5 = (x, y, r) => { let d = ''; for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? r * 0.4 : r; d += (k ? 'L' : 'M') + (x + rr * Math.cos(a)).toFixed(1) + ' ' + (y + rr * Math.sin(a)).toFixed(1); } return d + 'Z'; };
   const sak = (x, y, k, r = 0) => `<g transform="translate(${x} ${y}) rotate(${r}) scale(${k})">${[0, 72, 144, 216, 288].map((a) => `<ellipse rx="1.9" ry="3" cy="-3" transform="rotate(${a})"/>`).join('')}<circle r="1.1" fill="#ffc2e0"/></g>`;
-  const paw = (x, y, k, r = 0) => `<g transform="translate(${x} ${y}) rotate(${r}) scale(${k})"><ellipse cx="0" cy="2" rx="3.4" ry="2.8"/><circle cx="-3.6" cy="-2.4" r="1.4"/><circle cx="-1.2" cy="-4.2" r="1.4"/><circle cx="1.2" cy="-4.2" r="1.4"/><circle cx="3.6" cy="-2.4" r="1.4"/></g>`;
+  const paw = (x, y, k, r = 0) => `<g transform="translate(${x} ${y}) rotate(${r}) scale(${k})"><ellipse cx="0" cy="2" rx="3.4" ry="2.8"/><circle cx="-3.1" cy="-2.7" r="1.55"/><circle cx="0" cy="-4.3" r="1.55"/><circle cx="3.1" cy="-2.7" r="1.55"/></g>`;
   const spk = (x, y, s) => `<path d="M${x} ${y - s}Q${x + s * 0.18} ${y - s * 0.18} ${x + s} ${y}Q${x + s * 0.18} ${y + s * 0.18} ${x} ${y + s}Q${x - s * 0.18} ${y + s * 0.18} ${x - s} ${y}Q${x - s * 0.18} ${y - s * 0.18} ${x} ${y - s}Z"/>`;
   const PAT = {
     hachi: `<path d="M14 14H106V63Q92 66 81 57Q70 47 60 34Q50 47 39 57Q28 66 14 63Z" fill="#a9a9bf" opacity=".6"/>`,
