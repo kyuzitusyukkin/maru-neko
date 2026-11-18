@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0b0b26">
-<title>まるねこ</title>
+<title>ぷにぷにきゃっとドロップ</title>
 <meta name="description" content="まるまった猫を落として、くっつけて、大きな猫に育てよう。">
 <meta name="author" content="otoyogames">
 <meta property="og:type" content="website">
-<meta property="og:title" content="まるねこ">
+<meta property="og:title" content="ぷにぷにきゃっとドロップ">
 <meta property="og:description" content="まるまった猫を落として、くっつけて、大きな猫に育てよう。">
 <meta property="og:image" content="https://kyuzitusyukkin.github.io/maru-neko/ogp.jpg">
 <meta property="og:url" content="https://kyuzitusyukkin.github.io/maru-neko/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="まるねこ">
+<meta name="twitter:title" content="ぷにぷにきゃっとドロップ">
 <meta name="twitter:description" content="まるまった猫を落として、くっつけて、大きな猫に育てよう。">
 <meta name="twitter:image" content="https://kyuzitusyukkin.github.io/maru-neko/ogp.jpg">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -77,7 +77,7 @@ html,body{margin:0;height:100%;background:#0b0b26;overflow:hidden;overscroll-beh
     </a>
     </sc-if>
     <div style="display: flex; align-items: center; gap: 8px">
-      <h1 style="margin: 0; font-size: 20px; font-weight: 700; color: {{t.ink}}">まるねこ</h1>
+      <h1 style="margin: 0; display: flex; flex-direction: column; align-items: center; line-height: 1.1; font-weight: 700; color: {{t.ink}}"><span style="font-size: 11px">ぷにぷに</span><span style="font-size: 15px">きゃっとドロップ</span></h1>
       <button aria-label="あそびかた" onClick="{{openHelp}}" style="width: 28px; height: 28px; border-radius: 14px; border: 1.5px solid {{t.border}}; background: {{t.surface}}; color: {{t.ink}}; font-size: 14px; font-weight: 700; cursor: pointer; padding: 0">?</button>
       <button aria-label="おとの大きさ" onClick="{{openVol}}" style="width: 28px; height: 28px; border-radius: 14px; border: 1.5px solid {{t.border}}; background: {{t.surface}}; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{t.ink}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"></path><circle cx="6.5" cy="18" r="2.5" fill="{{t.ink}}"></circle><circle cx="16.5" cy="16" r="2.5" fill="{{t.ink}}"></circle></svg></button>
     </div>
@@ -106,7 +106,7 @@ html,body{margin:0;height:100%;background:#0b0b26;overflow:hidden;overscroll-beh
   <!-- 箱 -->
   <div style="display: flex; justify-content: center">
     <div style="position: relative; margin-top: 8px; width: 340px; height: 532px; border-radius: 24px; background: radial-gradient(1.3px 1.3px at 14% 30%, rgba(255,255,255,0.75), transparent), radial-gradient(1px 1px at 72% 12%, rgba(255,255,255,0.7), transparent), radial-gradient(1.5px 1.5px at 86% 44%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 38% 58%, rgba(255,255,255,0.55), transparent), radial-gradient(1.2px 1.2px at 22% 76%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 64% 84%, rgba(255,255,255,0.5), transparent), linear-gradient(180deg, #3E3170 0%, #6A4F92 55%, #A8779F 100%); box-sizing: content-box; overflow: hidden">
-      <canvas ref="{{canvasRef}}" width="680" height="1064" role="img" aria-label="まるねこの箱。タップした場所に猫を落とします" onPointerDown="{{onDown}}" onPointerMove="{{onMoveP}}" onPointerUp="{{onUp}}" onPointerCancel="{{onCancel}}" style="position: absolute; inset: 0; width: 340px; height: 532px; touch-action: none; cursor: pointer"></canvas>
+      <canvas ref="{{canvasRef}}" width="680" height="1064" role="img" aria-label="ぷにぷにきゃっとドロップの箱。タップした場所に猫を落とします" onPointerDown="{{onDown}}" onPointerMove="{{onMoveP}}" onPointerUp="{{onUp}}" onPointerCancel="{{onCancel}}" style="position: absolute; inset: 0; width: 340px; height: 532px; touch-action: none; cursor: pointer"></canvas>
       <div role="status" style="position: absolute; left: 0; right: 0; top: 10px; z-index: 3; text-align: center; pointer-events: none; opacity: 0; transform-origin: 50% 50%; font-size: 22px; font-weight: 700; line-height: 1.1; color: #FFFFFF; text-shadow: 0 0 8px rgba(255,184,234,0.9), 0 0 16px rgba(166,255,240,0.5); animation: {{comboAn}}">Combo <b class="mn-cn">{{comboN}}</b><div style="font-size: 14px; margin-top: 2px">+{{comboBonus}}</div></div>
     </div>
   </div>
@@ -189,8 +189,8 @@ html,body{margin:0;height:100%;background:#0b0b26;overflow:hidden;overscroll-beh
   <!-- 参加するときにカリカリを3つ払う -->
   <sc-if value="{{gateOn}}" hint-placeholder-val="{{ false }}">
   <div style="position: absolute; inset: 0; bottom: {{ovBottom}}; z-index: 15; background: rgba(20,16,28,0.55); display: flex; align-items: center; justify-content: center; padding: 0 32px">
-    <div role="dialog" aria-label="まるねこに参加" style="width: 100%; background: {{t.bg}}; border-radius: 22px; padding: 22px 20px 18px 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; box-sizing: border-box">
-      <div style="font-size: 18px; font-weight: 700; color: {{t.ink}}">まるねこ</div>
+    <div role="dialog" aria-label="ぷにぷにきゃっとドロップに参加" style="width: 100%; background: {{t.bg}}; border-radius: 22px; padding: 22px 20px 18px 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; box-sizing: border-box">
+      <div style="font-size: 18px; font-weight: 700; color: {{t.ink}}">ぷにぷにきゃっとドロップ</div>
       <sc-if value="{{gateNormal}}" hint-placeholder-val="{{ true }}">
       <button onClick="{{payGate}}" disabled="{{gateNo}}" style="width: 100%; height: 50px; border-radius: 25px; border: none; background: {{gateBg}}; color: #FFFFFF; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit">{{gateBtn}}</button>
       </sc-if>
@@ -853,7 +853,7 @@ class Component extends DCLogic {
   }
   cardInfo() {
     const lv = this.state.top || 0;
-    return { title: 'まるねこ', score: this.state.score, sub: CATS[lv].name + ' まで育ったよ', file: 'maruneko-score.png',
+    return { title: 'ぷにぷにきゃっとドロップ', score: this.state.score, sub: CATS[lv].name + ' まで育ったよ', file: 'maruneko-score.png',
       draw: (c) => drawCat(c, lv, 32, 0) };
   }
   payNow(cost) {
