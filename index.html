@@ -127,7 +127,7 @@ html,body{margin:0;height:100%;background:#0b0b26;overflow:hidden;overscroll-beh
         <li>続けて猫がくっつくとコンボ！コンボが続くほどボーナス点が増えます</li>
       </ul>
       <div style="font-size: 14px; font-weight: 700; margin-top: 4px">猫の育ち方</div>
-      <canvas ref="{{chainRef}}" width="660" height="400" aria-label="しろねこ、ピーチ、くろねこ、さくら、そらいろ、レモン、ラベンダー、ぶどう、オーロラ、キングキャットの順に大きくなる" style="width: 100%; max-width: 330px; align-self: center"></canvas>
+      <canvas ref="{{chainRef}}" width="660" height="400" aria-label="しろねこ、こはく、くろねこ、さくら、そらいろ、レモン、ラベンダー、ぶどう、オーロラ、キングキャットの順に大きくなる" style="width: 100%; max-width: 330px; align-self: center"></canvas>
       <div style="font-size: 14px; font-weight: 700; margin-top: 4px">もらえるカリカリ</div>
       <div style="border-radius: 14px; background: {{t.surface}}; display: flex; flex-direction: column">
         <sc-for list="{{tiers}}" as="tr" hint-placeholder-count="5">
@@ -288,7 +288,7 @@ html,body{margin:0;height:100%;background:#0b0b26;overflow:hidden;overscroll-beh
 const W = 340, H = 532, LINE = 106, DROP_Y = 58, SCALE = 2, LID = 12;
 const CATS = [
   { name: 'しろねこ', r: 14, fur: '#FFFFFF', edge: '#C9C2D2', ear: '#F2C3CF', spot: '#8E8A99' },
-  { name: 'ピーチ', r: 19, fur: '#F4C48C', edge: '#C98A4B', ear: '#F7D3B0', bib: '#FFFFFF' },
+  { name: 'こはく', r: 19, fur: '#F4C48C', edge: '#C98A4B', ear: '#F7D3B0', bib: '#FFFFFF' },
   { name: 'くろねこ', r: 25, fur: '#2B2433', edge: '#6A6278', ear: '#4A3E52' },
   { name: 'さくら', r: 31, fur: '#9A96A6', edge: '#6F6B7C', ear: '#C9C4D2', stripe: '#6F6B7C' },
   { name: 'そらいろ', r: 38, fur: '#F3E6D2', edge: '#B89C80', ear: '#6B4A3A', point: '#6B4A3A' },
@@ -324,7 +324,7 @@ const MN = (() => {
   // 小さい順（同じ猫2匹で1つ上へ）
   const LOOK = [
     { name: 'しろねこ', c0: '#ffffff', c1: '#d4d8f4', eye: '#7f96ff', pat: 'hachi', ear: '#a9a9bf', earA: 0.6 },
-    { name: 'ピーチ', c0: '#fff1e8', c1: '#ffb596', eye: '#7a4aa0', pat: 'tora', ear: '#ee8456', earA: 0.3 },
+    { name: 'こはく', c0: '#fff1e8', c1: '#ffb596', eye: '#7a4aa0', pat: 'tora', ear: '#ee8456', earA: 0.3 },
     { name: 'くろねこ', c0: '#3a2f5e', c1: '#0e0a1e', eye: '#7ff5d0', dark: 1 },
     { name: 'さくら', c0: '#ffe6f4', c1: '#ffa6d4', eye: '#6a4bb8', pat: 'sakura' },
     { name: 'そらいろ', c0: '#d9f4ff', c1: '#56bdf0', eye: '#3b3a8c', pat: 'cloud' },
